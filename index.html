@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valora - Tuyển dụng</title>
+    <title>Valora | Kết Nối Tài Năng</title>
 
     <style>
         * {
@@ -12,87 +12,160 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #222;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* THANH MENU */
+        body {
+            font-family: Arial, sans-serif;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        /* ===== HEADER ===== */
         header {
+            height: 72px;
             background: white;
-            height: 75px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 8%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #d71920;
+            font-size: 27px;
+            font-weight: 800;
+            color: #c8102e;
+            letter-spacing: 1px;
         }
 
         nav a {
             text-decoration: none;
-            color: #333;
-            margin-left: 30px;
-            font-weight: 500;
+            color: #374151;
+            margin-left: 28px;
+            font-size: 15px;
+            font-weight: 600;
         }
 
         nav a:hover {
-            color: #d71920;
+            color: #c8102e;
         }
 
-        /* BANNER */
-        .banner {
-            min-height: 430px;
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 560px;
             display: flex;
             align-items: center;
-            padding: 60px 8%;
-            background: linear-gradient(120deg, #fff, #f8e9e9);
+            padding: 80px 8%;
+            background:
+                linear-gradient(120deg, #fff 0%, #fff5f6 50%, #ffe8eb 100%);
         }
 
-        .banner-content {
-            max-width: 700px;
+        .hero-content {
+            width: 58%;
         }
 
-        .banner h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            line-height: 1.15;
-        }
-
-        .banner h1 span {
-            color: #d71920;
-        }
-
-        .banner p {
-            font-size: 20px;
-            color: #555;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .button {
+        .tag {
             display: inline-block;
-            background: #d71920;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 6px;
-            text-decoration: none;
+            background: #fff;
+            color: #c8102e;
+            padding: 9px 17px;
+            border-radius: 30px;
+            font-size: 14px;
             font-weight: bold;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
 
-        .button:hover {
-            background: #b8141a;
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 22px;
+            color: #111827;
         }
 
-        /* VIỆC LÀM */
-        .jobs {
-            padding: 70px 8%;
+        .hero h1 span {
+            color: #c8102e;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #5b6472;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .main-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #c8102e;
+            color: white;
+            padding: 15px 27px;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(200,16,46,0.2);
+        }
+
+        .main-button:hover {
+            background: #a90d26;
+        }
+
+        .second-button {
+            display: inline-block;
+            text-decoration: none;
+            background: white;
+            color: #333;
+            padding: 15px 27px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid #ddd;
+        }
+
+        .second-button:hover {
+            border-color: #c8102e;
+            color: #c8102e;
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            background: white;
+            padding: 28px 8%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .stat {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 27px;
+            color: #c8102e;
+            margin-bottom: 6px;
+        }
+
+        .stat span {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* ===== SECTION ===== */
+        .section {
+            padding: 80px 8%;
         }
 
         .section-title {
@@ -101,67 +174,219 @@
         }
 
         .section-title h2 {
-            font-size: 34px;
-            margin-bottom: 10px;
+            font-size: 36px;
+            color: #111827;
+            margin-bottom: 12px;
         }
 
         .section-title p {
-            color: #666;
+            color: #667085;
+            font-size: 16px;
         }
 
+        /* ===== JOBS ===== */
         .job-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            gap: 28px;
         }
 
         .job-card {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid #e7e9ee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: 0.25s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .job-label {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 20px;
+            background: #fff0f2;
+            color: #c8102e;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 18px;
         }
 
         .job-card h3 {
             font-size: 23px;
+            line-height: 1.4;
+            margin-bottom: 18px;
+            color: #111827;
+        }
+
+        .job-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .job-info span {
+            background: #f3f4f6;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .salary {
+            color: #c8102e;
+            font-size: 19px;
+            font-weight: bold;
             margin-bottom: 15px;
         }
 
         .job-card p {
-            color: #666;
-            margin-bottom: 12px;
+            color: #667085;
+            line-height: 1.6;
+            margin-bottom: 22px;
         }
 
-        .salary {
-            color: #d71920 !important;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .job-card .button {
-            margin-top: 15px;
-        }
-
-        /* CHÂN TRANG */
-        footer {
-            background: #222;
-            color: white;
+        .job-button {
+            display: block;
             text-align: center;
-            padding: 30px;
-            margin-top: 30px;
+            text-decoration: none;
+            background: #111827;
+            color: white;
+            padding: 13px;
+            border-radius: 7px;
+            font-weight: bold;
         }
 
+        .job-button:hover {
+            background: #c8102e;
+        }
+
+        /* ===== EVP ===== */
+        .evp {
+            background: #111827;
+            color: white;
+        }
+
+        .evp .section-title h2 {
+            color: white;
+        }
+
+        .evp .section-title p {
+            color: #cbd5e1;
+        }
+
+        .evp-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .evp-card {
+            background: #1f2937;
+            border: 1px solid #374151;
+            padding: 28px;
+            border-radius: 14px;
+        }
+
+        .evp-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .evp-card h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .evp-card p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            padding: 75px 8%;
+            text-align: center;
+            background: #fff5f6;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #667085;
+            margin-bottom: 25px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 35px 8%;
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* ===== MOBILE ===== */
         @media (max-width: 768px) {
+
+            header {
+                padding: 0 5%;
+            }
+
             nav {
                 display: none;
             }
 
-            .banner h1 {
-                font-size: 38px;
+            .hero {
+                padding: 65px 7%;
             }
 
-            .job-container {
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .stats {
                 grid-template-columns: 1fr;
+            }
+
+            .job-container,
+            .evp-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 7%;
             }
         }
     </style>
@@ -169,87 +394,154 @@
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <div class="logo">VALORA</div>
 
         <nav>
             <a href="#">Trang chủ</a>
             <a href="#jobs">Cơ hội nghề nghiệp</a>
-            <a href="#">Về chúng tôi</a>
-            <a href="#">Liên hệ</a>
+            <a href="#evp">Môi trường & Phúc lợi</a>
+            <a href="#contact">Liên hệ</a>
         </nav>
     </header>
 
 
-    <section class="banner">
-        <div class="banner-content">
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                TUYỂN DỤNG 2026
+            </div>
+
             <h1>
                 Kết Nối <span>Tài Năng</span><br>
                 Kiến Tạo Thành Công
             </h1>
 
             <p>
-                Gia nhập Valora để phát triển năng lực,
-                thử sức với những cơ hội mới và cùng nhau
-                tạo nên những giá trị khác biệt.
+                Valora tìm kiếm những người trẻ tài năng,
+                chủ động và sẵn sàng tạo ra những giá trị khác biệt.
+                Hãy cùng chúng tôi biến năng lực thành thành công.
             </p>
 
-            <a href="#jobs" class="button">
-                Xem vị trí tuyển dụng
-            </a>
+            <div class="hero-buttons">
+                <a href="#jobs" class="main-button">
+                    Xem vị trí tuyển dụng
+                </a>
+
+                <a href="#evp" class="second-button">
+                    Vì sao chọn Valora?
+                </a>
+            </div>
+
         </div>
+
     </section>
 
 
-    <section class="jobs" id="jobs">
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="stat">
+            <strong>10–15 triệu</strong>
+            <span>Mức lương BD</span>
+        </div>
+
+        <div class="stat">
+            <strong>8–12 triệu</strong>
+            <span>Mức lương Digital Marketing</span>
+        </div>
+
+        <div class="stat">
+            <strong>2 lần/năm</strong>
+            <span>Xét cơ hội thăng tiến</span>
+        </div>
+
+    </section>
+
+
+    <!-- JOBS -->
+    <section class="section" id="jobs">
 
         <div class="section-title">
-            <h2>Vị trí đang tuyển</h2>
-            <p>Tìm công việc phù hợp và bắt đầu hành trình cùng Valora</p>
+            <h2>Cơ hội nghề nghiệp</h2>
+
+            <p>
+                Chọn vị trí phù hợp và bắt đầu hành trình phát triển cùng Valora
+            </p>
         </div>
 
 
         <div class="job-container">
 
-            <!-- VỊ TRÍ BD -->
+            <!-- BD -->
             <div class="job-card">
-                <h3>Chuyên viên Phát triển Kinh doanh (BD)</h3>
 
-                <p>📍 Hà Nội</p>
+                <div class="job-label">
+                    BUSINESS DEVELOPMENT
+                </div>
 
-                <p class="salary">
-                    💰 10 - 15 triệu đồng/tháng
-                </p>
+                <h3>
+                    Chuyên viên Phát triển Kinh doanh (BD)
+                </h3>
+
+                <div class="job-info">
+                    <span>📍 Hà Nội</span>
+                    <span>💼 Toàn thời gian</span>
+                    <span>⭐ 1+ năm kinh nghiệm</span>
+                </div>
+
+                <div class="salary">
+                    💰 10 – 15 triệu đồng/tháng
+                </div>
 
                 <p>
-                    Cơ hội phát triển kinh doanh, xây dựng quan hệ
-                    khách hàng và phát triển sự nghiệp cùng Valora.
+                    Xây dựng và phát triển mạng lưới khách hàng,
+                    tìm kiếm đối tác, đàm phán và tối ưu doanh thu
+                    từ khách hàng hiện có.
                 </p>
 
-                <a href="chi-tiet-bd.html" class="button">
-                    Xem chi tiết
+                <a href="chi-tiet-bd.html" class="job-button">
+                    XEM CHI TIẾT →
                 </a>
+
             </div>
 
 
-            <!-- VỊ TRÍ DIGITAL MARKETING -->
+            <!-- MARKETING -->
             <div class="job-card">
-                <h3>Chuyên viên Digital Marketing</h3>
 
-                <p>📍 Hà Nội</p>
+                <div class="job-label">
+                    DIGITAL MARKETING
+                </div>
 
-                <p class="salary">
-                    💰 8 - 12 triệu đồng/tháng
-                </p>
+                <h3>
+                    Chuyên viên Digital Marketing
+                </h3>
+
+                <div class="job-info">
+                    <span>📍 Hà Nội</span>
+                    <span>💼 Toàn thời gian</span>
+                    <span>🌱 Có thể là ứng viên mới</span>
+                </div>
+
+                <div class="salary">
+                    💰 8 – 12 triệu đồng/tháng
+                </div>
 
                 <p>
-                    Tham gia sáng tạo nội dung, triển khai các hoạt động
-                    Digital Marketing và thử nghiệm những ý tưởng mới.
+                    Thử nghiệm ý tưởng sáng tạo, triển khai chiến dịch
+                    Digital Marketing đa kênh và góp phần xây dựng
+                    hình ảnh thương hiệu trên môi trường số.
                 </p>
 
-                <a href="chi-tiet-marketing.html" class="button">
-                    Xem chi tiết
+                <a href="chi-tiet-marketing.html" class="job-button">
+                    XEM CHI TIẾT →
                 </a>
+
             </div>
 
         </div>
@@ -257,8 +549,109 @@
     </section>
 
 
+    <!-- EVP -->
+    <section class="section evp" id="evp">
+
+        <div class="section-title">
+
+            <h2>
+                Vì sao bạn nên chọn Valora?
+            </h2>
+
+            <p>
+                Những giá trị Valora mang đến cho hành trình phát triển của bạn
+            </p>
+
+        </div>
+
+
+        <div class="evp-container">
+
+            <div class="evp-card">
+
+                <div class="evp-icon">💰</div>
+
+                <h3>
+                    Thu nhập xứng đáng
+                </h3>
+
+                <p>
+                    Mức lương cạnh tranh kết hợp thưởng theo hiệu suất
+                    và KPI, ghi nhận trực tiếp những đóng góp của bạn.
+                </p>
+
+            </div>
+
+
+            <div class="evp-card">
+
+                <div class="evp-icon">🚀</div>
+
+                <h3>
+                    Cơ hội thăng tiến
+                </h3>
+
+                <p>
+                    Đánh giá cơ hội phát triển và thăng tiến 2 lần mỗi năm
+                    dựa trên kết quả công việc.
+                </p>
+
+            </div>
+
+
+            <div class="evp-card">
+
+                <div class="evp-icon">📚</div>
+
+                <h3>
+                    Được đầu tư học tập
+                </h3>
+
+                <p>
+                    Valora hỗ trợ 100% chi phí đào tạo chuyên môn nâng cao,
+                    giúp bạn liên tục cập nhật kiến thức và kỹ năng.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+
+        <h2>
+            Sẵn sàng gia nhập Valora?
+        </h2>
+
+        <p>
+            Cơ hội đang chờ bạn. Hãy gửi hồ sơ và bắt đầu hành trình mới.
+        </p>
+
+        <a href="ung-tuyen.html" class="main-button">
+            ỨNG TUYỂN NGAY
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Valora. Kết Nối Tài Năng - Kiến Tạo Thành Công.</p>
+
+        <div class="footer-logo">
+            VALORA
+        </div>
+
+        <p>
+            Kết Nối Tài Năng - Kiến Tạo Thành Công
+        </p>
+
+        <p style="margin-top: 8px;">
+            © 2026 Valora. All rights reserved.
+        </p>
+
     </footer>
 
 </body>
